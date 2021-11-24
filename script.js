@@ -1,7 +1,3 @@
-function simpleFoo() {
-    return ('not a constructor');
-}
-
 const plant = {
     isGreen: 'sometimes',
     isAlive: true,
@@ -39,12 +35,8 @@ const peony =  new Flower('peony');
 console.log(marigold.isPretty);
 console.log(peony.isPretty);
 console.log(Object.getPrototypeOf(Flower.prototype) === Object.prototype);
-/*
-simpleFoo 
-    .prototype {
-        constructor: f simp
-    }
 
+/*
 Flower 
     .prototype {
         constructor: f Flower()
