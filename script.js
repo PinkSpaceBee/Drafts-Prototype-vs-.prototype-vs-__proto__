@@ -44,7 +44,9 @@ Flower
         [[Prototype]]: Object
     }
     [[Prototype]]: f ()
---- so Flower has [[Prototype]] as a function, but also Flower's prototype property (which all functions have) has its own [[Prototype]]. Interestingly, the constructor property also has a prototype property (although, on second thought, it seems self-evident as constructor property returns a reference to the Object constructor function) ---
+--- so Flower has [[Prototype]] as a function, but also Flower's prototype property (which all functions have) has its own [[Prototype]]. Interestingly, 
+the constructor property also has a prototype property (although, on second thought, it seems self-evident as constructor property returns a reference to 
+the Object constructor function) ---
 
 Flower.prototype
     walk: f ()
@@ -61,7 +63,8 @@ Object.getPrototypeOf(Flower.prototype)
 Object.prototype
     constructor: f Object()
     __proto__: null
-    [[Prototype]]: null // tbh console.dir doesn't even display such a prorerty in this case, but the constructor property HAS the [[Prototype]] property, and its value is f (), i.e. the built-in function object with methods and such
+    [[Prototype]]: null // tbh console.dir doesn't even display such a prorerty in this case, but the constructor property HAS the [[Prototype]] property, 
+    and its value is f (), i.e. the built-in function object with methods and such
 --- --- --- 
 
 Flower.prototype === peony.__proto__
@@ -75,7 +78,8 @@ Every function (there are exceptions but you got the gist) has the .prototype pr
 
 .prototype is a link to an object. 
 
-[[Prototype]] property holds a reference to the object's prototype. It can be set manually, just as I set Flower's [[Prototype]] to plant object. So now, if I access Flower, I get this:
+[[Prototype]] property holds a reference to the object's prototype. It can be set manually, just as I set Flower's [[Prototype]] to plant object. So now, 
+if I access Flower, I get this:
 Flower
     name: 'Flower' 
     .prototype
@@ -84,7 +88,8 @@ Flower
         isAlive: true
         isGreen: 'sometimes'
 
-As you can see, there's no sign of isPretty and waterIt(). These properties are accessable by the peony, but not by the marigold and the Flower itself. BUT the name property is there and is accessible by the Flower and its instances.
+As you can see, there's no sign of isPretty and waterIt(). These properties are accessable by the peony, but not by the marigold and the Flower itself. 
+BUT the name property is there and is accessible by the Flower and its instances.
 
 Honestly, it seems kinda convoluted. Like, if I access tree, I get this:
 
@@ -119,7 +124,8 @@ marigold
             constructor: f Flower(name)
             [[Prototype]]: Object
 
-The method console.dir() displays a list of properties of the object passed as an argument. So it appears that isPretty is a property of the peony object but not the Flower constructor function. Oooh, I get it now, look:
+The method console.dir() displays a list of properties of the object passed as an argument. So it appears that isPretty is a property of the peony object 
+but not the Flower constructor function. Oooh, I get it now, look:
 
 Constructor function is just a regular function, and it's declared as a regular function. All the magic happens when you execute it using the new keyword. 
 
@@ -156,7 +162,10 @@ Flower's .prototype property references the object that is created when the func
 peony.__proto__ === Flower.prototype
 Fi-fucking-nally! I finally get it! 
 
-Oh, and the last bit. I see that Object.create() works differently from let obj = new Obj(). As I found out earlier, when I invoke the function with new keyword, the new empty object is created and filled with properties from the parent function. [[Prototype]] is defined as parent's.prototype. Apparently, when I use the Object.create() method, the children's [[Prototype]] IS defined as parent's.prototype, but, since there's no function invoked with the new keyword, the new empty object isn't being created and filled with parent's properties. 
+Oh, and the last bit. I see that Object.create() works differently from let obj = new Obj(). As I found out earlier, when I invoke the function with new 
+keyword, the new empty object is created and filled with properties from the parent function. [[Prototype]] is defined as parent's.prototype. Apparently, 
+when I use the Object.create() method, the children's [[Prototype]] IS defined as parent's.prototype, but, since there's no function invoked with the new 
+keyword, the new empty object isn't being created and filled with parent's properties. 
 
 OK NOW I get it. 
 */
