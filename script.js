@@ -106,9 +106,9 @@ tree
 
 In this case, both children of the tree and the tree itself can access its properties.         
 
-So, as I see it, name prop of the Flower works just as isTall prop of the tree. 
+So, as I see it, the name prop of the Flower works just as the isTall prop of the tree. 
 
-Now look at this! 
+Now, look at this! 
 
 peony 
     Flower
@@ -134,14 +134,14 @@ not the Flower constructor function.
 
 Oooh, I get it now, look:
 
-Constructor function is just a regular function, and it's declared as a regular 
+A constructor function is just a regular function, and it's declared as a regular 
 function. All the magic happens when you execute it using the new keyword. 
 
 // when I write this
 const peony = new Flower('peony')
 
 1 A new empty object is created and assigned to .this.
-2 The function body is executed. Usually it adds new properties to .this.
+2 The function body is executed. Usually, it adds new properties to .this.
 3 The value of .this is returned.
 
 function Flower(name) {
@@ -159,7 +159,7 @@ function Flower(name) {
 
 And this is why Flower.isPretty returns undefined: you didn't invoke the 
 function with the new keyword, and therefore the new object wasn't created. 
-Newly created peony object is just it - an object, and it doesn't have exclusive 
+A newly created peony object is just it - an object, and it doesn't have exclusive 
 to functions .prototype property. 
 
 Flower's [[Prototype]] property references the plant object, its prototype.
