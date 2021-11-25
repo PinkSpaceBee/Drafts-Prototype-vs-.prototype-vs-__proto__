@@ -182,4 +182,13 @@ Apparently, when I use the Object.create() method, the children's [[Prototype]] 
 
 OK NOW I get it. 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+One more thing: you can't just create a new object, let's say, sunflower, and explicitly state it's prototype as the Flower constructor:
+
+sunflower.__proto__ = Flower
+
+Yeah, it would've worked if the Flower were a regular object created
+using object literal syntax (i.e. const flower = {}). But, since it's a
+constructor function, it can't pass its properties by inheritance UNLESS 
+the child was created using the new keyword. No new keyword - no object
+that could be populated with properties. 
 */
