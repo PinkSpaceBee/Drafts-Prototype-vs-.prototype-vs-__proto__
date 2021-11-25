@@ -80,7 +80,8 @@ Every function (there are exceptions but you got the gist) has the .prototype
 property AND the [[Prototype]] property. 
 
 [[Prototype]] property holds a reference to the object's prototype. It can be 
-set manually, just as I set Flower's [[Prototype]] to the plant object. So now, if I access Flower, I get this:
+set manually, just as I set Flower's [[Prototype]] to the plant object. So now,
+if I access Flower, I get this:
 
 Flower
     name: 'Flower' 
@@ -133,7 +134,8 @@ not the Flower constructor function.
 
 Oooh, I get it now, look:
 
-A constructor function is just a regular function, and it's declared as a regular function. All the magic happens when you execute it using the new keyword. 
+A constructor function is just a regular function, and it's declared as a
+regular function. All the magic happens when you execute it using the new keyword. 
 
 // when I write this
 const peony = new Flower('peony')
