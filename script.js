@@ -182,7 +182,8 @@ Apparently, when I use the Object.create() method, the children's [[Prototype]] 
 
 OK NOW I get it. 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
-One more thing: you can't just create a new object, let's say, sunflower, and explicitly state it's prototype as the Flower constructor:
+One more thing: you can't just create a new object, let's say, sunflower, and
+explicitly state it's prototype as the Flower constructor:
 
 sunflower.__proto__ = Flower
 
