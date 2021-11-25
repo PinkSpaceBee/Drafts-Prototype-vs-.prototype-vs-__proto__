@@ -176,9 +176,12 @@ Fi-fucking-nally! I finally get it!
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
 Oh, and the last bit. I see that Object.create() works differently from 
 const obj = new Obj(). As I found out earlier, when I invoke the function with 
-the new keyword, the new empty object is created and filled with properties from the parent function. [[Prototype]] is defined as parent.prototype. 
+the new keyword, the new empty object is created and filled with properties
+from the parent function. [[Prototype]] is defined as parent.prototype. 
 
-Apparently, when I use the Object.create() method, the children's [[Prototype]] IS defined as parent.prototype, but, since there's no function invoked with the new keyword, the new empty object isn't being created and filled with parent's properties. 
+Apparently, when I use the Object.create() method, the children's [[Prototype]]
+IS defined as parent.prototype, but, since there's no function invoked with the
+new keyword, the new empty object isn't being created and filled with parent's properties. 
 
 OK NOW I get it. 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
