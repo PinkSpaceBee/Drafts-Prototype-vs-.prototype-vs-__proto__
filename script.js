@@ -159,7 +159,8 @@ function Flower(name) {
 
 And this is why Flower.isPretty returns undefined: you didn't invoke the 
 function with the new keyword, and therefore the new object wasn't created. 
-A newly created peony object is just it - an object, and it doesn't have exclusive to functions .prototype property. 
+A newly created peony object is just it - an object, and it doesn't have
+exclusive to functions .prototype property. 
 
 Flower's [[Prototype]] property references the plant object, its prototype.
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
