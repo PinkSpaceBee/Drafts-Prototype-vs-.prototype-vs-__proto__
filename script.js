@@ -80,8 +80,7 @@ Every function (there are exceptions but you got the gist) has the .prototype
 property AND the [[Prototype]] property. 
 
 [[Prototype]] property holds a reference to the object's prototype. It can be 
-set manually, just as I set Flower's [[Prototype]] to the plant object. So now, if 
-I access Flower, I get this:
+set manually, just as I set Flower's [[Prototype]] to the plant object. So now, if I access Flower, I get this:
 
 Flower
     name: 'Flower' 
@@ -134,8 +133,7 @@ not the Flower constructor function.
 
 Oooh, I get it now, look:
 
-A constructor function is just a regular function, and it's declared as a regular 
-function. All the magic happens when you execute it using the new keyword. 
+A constructor function is just a regular function, and it's declared as a regular function. All the magic happens when you execute it using the new keyword. 
 
 // when I write this
 const peony = new Flower('peony')
@@ -159,8 +157,7 @@ function Flower(name) {
 
 And this is why Flower.isPretty returns undefined: you didn't invoke the 
 function with the new keyword, and therefore the new object wasn't created. 
-A newly created peony object is just it - an object, and it doesn't have exclusive 
-to functions .prototype property. 
+A newly created peony object is just it - an object, and it doesn't have exclusive to functions .prototype property. 
 
 Flower's [[Prototype]] property references the plant object, its prototype.
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
@@ -179,12 +176,9 @@ Fi-fucking-nally! I finally get it!
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
 Oh, and the last bit. I see that Object.create() works differently from 
 const obj = new Obj(). As I found out earlier, when I invoke the function with 
-the new keyword, the new empty object is created and filled with properties from the 
-parent function. [[Prototype]] is defined as parent.prototype. 
+the new keyword, the new empty object is created and filled with properties from the parent function. [[Prototype]] is defined as parent.prototype. 
 
-Apparently, when I use the Object.create() method, the children's [[Prototype]] IS 
-defined as parent.prototype, but, since there's no function invoked with the new 
-keyword, the new empty object isn't being created and filled with parent's properties. 
+Apparently, when I use the Object.create() method, the children's [[Prototype]] IS defined as parent.prototype, but, since there's no function invoked with the new keyword, the new empty object isn't being created and filled with parent's properties. 
 
 OK NOW I get it. 
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
