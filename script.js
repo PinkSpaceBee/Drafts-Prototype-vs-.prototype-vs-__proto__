@@ -26,7 +26,7 @@ Flower.prototype.walk = function() {
     return `it can't :(`;
 }
 
-Object.setPrototypeOf(Flower, plant);
+Object.setPrototypeOf(Flower.prototype, plant); //what a silly mistake
 
 const marigold = Object.create(Flower.prototype);
 marigold.name = 'marigold';
